@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Ensure to have zsh installed
-sudo apt update -qy
-sudo apt install zsh -qy
+sudo apt update -qqy
+sudo apt install zsh -qqy
 
 
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
@@ -34,7 +34,7 @@ if [[ -d ${ZSH_CUSTOM}/themes/powerlevel10k ]]
 then
   git -C ${ZSH_CUSTOM}/themes/powerlevel10k pull 
 else
-  git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
+  git clone --quiet https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 fi
 
 # If custom zshrc file was moved by ohmyzsh, replace it 
