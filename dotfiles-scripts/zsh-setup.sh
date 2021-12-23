@@ -36,6 +36,7 @@ fi
 
 # If custom zshrc file was moved by ohmyzsh, replace it 
 if [[ -f ${HOME}/.zshrc.pre-oh-my-zsh ]]
+then
   mv ${HOME}/.zshrc.pre-oh-my-zsh ${HOME}/.zshrc
 fi
 
