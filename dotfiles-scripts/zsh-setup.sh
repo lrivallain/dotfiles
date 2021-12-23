@@ -7,11 +7,14 @@ sudo apt install zsh -qy
 
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
 
-if [[ -d $ZSH_CUSTOM ]]
+
+if [[ -d $ZSH_CUSTOM/../.git ]]
 then
   echo "Oh My ZSH is already installed"
+  omz update
 else
   echo "Oh My ZSH..."
+  rm -rf $ZSH_CUSTOM/../
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
