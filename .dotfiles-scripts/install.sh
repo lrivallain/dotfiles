@@ -16,5 +16,5 @@ else
   dotfiles checkout -f --quiet
 fi
 
-bash $HOME/dotfiles-scripts/zsh-setup.sh
-bash $HOME/dotfiles-scripts/tools-setup-apt.sh
+bash $HOME/.dotfiles-scripts/zsh-setup.sh
+bash $HOME/.dotfiles-scripts/tools-setup-apt.sh

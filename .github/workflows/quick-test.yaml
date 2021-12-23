@@ -19,4 +19,4 @@ jobs:
         path: working-repo
     - name: Configure the complete profile
       run: |
-        bash working-repo/dotfiles-scripts/install.sh
+        bash working-repo/.dotfiles-scripts/install.sh

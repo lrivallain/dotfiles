@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-curl -s "https://raw.githubusercontent.com/lrivallain/dotfiles/master/dotfiles-scripts/install.sh" | bash
+curl -s "https://raw.githubusercontent.com/lrivallain/dotfiles/master/.dotfiles-scripts/install.sh" | bash
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Use `dotfiles` command like a standard `git` one:
 dotfiles st
 
 # add file
-dotfile add path/to/file.rc
+dotfiles add path/to/file.rc
 
 # commit
 dotfiles commit -m "my comment"
