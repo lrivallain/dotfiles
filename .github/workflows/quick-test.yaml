@@ -16,16 +16,7 @@ jobs:
     - name: Initial checkout
       uses: actions/checkout@master
       with:
-        path: .cfg
-    - name: Home checkout and configuration
+        path: working-repo
+    - name: Configure the complete profile
       run: |
-        # shopt -s expand_aliases
-        alias dotfiles='git --git-dir=$GITHUB_WORKSPACE/.cfg/.git --work-tree=$GITHUB_WORKSPACE'
-        shopt -s expand_aliases
-        dotfiles checkout -f
-    - name: Configure ZSH
-      run: |
-        bash zsh-setup.sh
-    - name: Configure other tools
-      run: |
-        bash tools-setup-apt.sh
+        bash working-repo/dotfiles-scripts/install.sh
