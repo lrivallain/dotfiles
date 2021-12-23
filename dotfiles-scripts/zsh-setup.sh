@@ -1,5 +1,9 @@
+#!/bin/bash
+
+# Ensure to have zsh installed
 sudo apt update -qy
 sudo apt install zsh -qy
+
 
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
 
@@ -30,5 +34,11 @@ else
   git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 fi
 
-echo "Force shell to be zsh"
+# If custom zshrc file was moved by ohmyzsh, replace it 
+if [[ -f ${HOME}/.zshrc.pre-oh-my-zsh ]]
+  mv ${HOME}/.zshrc.pre-oh-my-zsh ${HOME}/.zshrc
+fi
+
+# Change shell
+echo "Force current user shell to be zsh"
 sudo chsh -s $(which zsh) $USER

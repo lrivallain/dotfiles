@@ -1,6 +1,15 @@
 # Basic tools
 sudo apt update -qy
-sudo apt install ack jq httpie tmux -qy
+sudo apt install -qy \
+  zsh \
+  vim \
+  curl \
+  python3 \
+  zsh \
+  ack \
+  jq \
+  httpie \
+  tmux
 
 # Github CLI
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
