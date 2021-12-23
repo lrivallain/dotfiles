@@ -1,0 +1,33 @@
+"""pythonrc startup script:
+
+Install (if available):
+* ptpython prompt (https://github.com/prompt-toolkit/ptpython)
+* rich tools (https://github.com/willmcgugan/rich)
+"""
+try:
+    from rich import inspect
+    from rich import print
+    from rich import pretty
+    pretty.install()
+    from rich.console import Console
+    console = Console()
+    print("Rich print(), console.print(), inspect() and pretty are installed")
+except ImportError:
+    print("rich is not available")
+
+
+try:
+    from ptpython.repl import embed
+except ImportError:
+    print("ptpython is not available: falling back to standard prompt")
+else:
+    import sys, os
+    from importlib import import_module
+    sys.path.append(os.path.expanduser("~/.config/ptpython/"))
+    pt_config = import_module("config")
+    historyPath = os.path.expanduser("~/.python_history")
+    sys.exit(embed(globals(), locals(),
+        history_filename=historyPath,
+        configure=pt_config.configure)
+    )
+

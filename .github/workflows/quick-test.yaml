@@ -1,0 +1,31 @@
+name: Deploy a test VM to test the dotfiles installation
+
+on:
+  push:
+    branches:
+    - master
+  schedule:
+  - cron:  '0 7 * * *' # every day at 7:00
+
+
+jobs:
+  deploy:
+    name: Quick deployment test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Initial checkout
+      uses: actions/checkout@master
+      with:
+        path: .cfg
+    - name: Home checkout and configuration
+      run: |
+        # shopt -s expand_aliases
+        alias dotfiles='git --git-dir=$GITHUB_WORKSPACE/.cfg/.git --work-tree=$GITHUB_WORKSPACE'
+        shopt -s expand_aliases
+        dotfiles checkout -f
+    - name: Configure ZSH
+      run: |
+        bash zsh-setup.sh
+    - name: Configure other tools
+      run: |
+        bash tools-setup-apt.sh
