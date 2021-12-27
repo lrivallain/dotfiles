@@ -103,8 +103,13 @@ export ARCHFLAGS="-arch x86_64"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # Source aliases file
-[[ ! -f ~/.zsh/aliases ]] || source ~/.zsh/aliases
-#
+
+# Sources files in ~/.zsh/ folder
+for src_file in ~/.zsh/*;
+do 
+    source ~/.zsh/aliases;
+done
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
