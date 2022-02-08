@@ -5,7 +5,13 @@
 ## Installation
 
 ```bash
-curl -s "https://raw.githubusercontent.com/lrivallain/dotfiles/master/.dotfiles-scripts/install.sh" | bash
+curl -Ls https://vupti.me/dotfiles | bash
+```
+
+or, expanded version:
+
+```bash
+curl -Ls "https://raw.githubusercontent.com/lrivallain/dotfiles/master/.dotfiles-scripts/install.sh" | bash
 ```
 
 ## Usage
