@@ -123,3 +123,8 @@ test -n "$terminfo[kcud1]" && bindkey "$terminfo[kcud1]" down-line-or-history
 
 # Autocomplete
 [[ ! -f /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

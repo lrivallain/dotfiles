@@ -20,3 +20,6 @@ sudo apt install gh -qqy
 # Azure CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az bicep install
+
+# Pyenv
+curl https://pyenv.run | bash
