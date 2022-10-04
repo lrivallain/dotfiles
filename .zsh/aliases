@@ -1,3 +1,4 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
 alias tf='terraform'
+alias tf-yolo='tf fmt -recursive && tf apply -auto-approve'
 alias cal='ncal -M -b'
