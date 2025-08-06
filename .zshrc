@@ -124,7 +124,18 @@ test -n "$terminfo[kcud1]" && bindkey "$terminfo[kcud1]" down-line-or-history
 # Autocomplete
 [[ ! -f /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# Pyenv - replacement with UV
+#export PYENV_ROOT="$HOME/.pyenv"
+#ommand -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+# UV
+echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
+
+# bash-style completion in the Zsh shell
+autoload -U +X bashcompinit && bashcompinit
+
+# OpenTofu: Opensource version of Terraform
+if command -v /usr/bin/tofu >/dev/null 2>&1; then
+  complete -o nospace -C /usr/bin/tofu tofu
+fi

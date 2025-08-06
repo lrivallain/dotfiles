@@ -21,5 +21,9 @@ sudo apt install gh -qqy
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az bicep install
 
-# Pyenv
-curl https://pyenv.run | bash
+# Former pyenv is now replaced by UV
+## Pyenv
+#curl https://pyenv.run | bash
+
+# UV
+curl -LsSf https://astral.sh/uv/install.sh | sh
