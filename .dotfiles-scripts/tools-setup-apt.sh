@@ -18,12 +18,19 @@ sudo apt update -qqy
 sudo apt install gh -qqy
 
 # Azure CLI
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-az bicep install
-
-# Former pyenv is now replaced by UV
-## Pyenv
-#curl https://pyenv.run | bash
+if ! command -v az >/dev/null 2>&1
+then
+  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+  az bicep install
+  az config set auto-upgrade.enable=yes
+else
+  az upgrade
+  az config set auto-upgrade.enable=yes
+fi
 
 # UV
-curl -LsSf https://astral.sh/uv/install.sh | sh
+if ! command -v uv >/dev/null 2>&1
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+else
+  uv self update
+fi
