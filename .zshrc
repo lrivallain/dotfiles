@@ -137,4 +137,4 @@ autoload -U +X bashcompinit && bashcompinit
 function py() {
   uv run $1
 }
-
+. "$HOME/.local/bin/env"
