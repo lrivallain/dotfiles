@@ -30,7 +30,7 @@ fi
 
 # UV
 if ! command -v uv >/dev/null 2>&1
-  curl -LsSf https://astral.sh/uv/install.sh | sh
+  curl -LsSf https://astral.sh/uv/install.sh | env UV_NO_MODIFY_PATH=1 sh
 else
   uv self update
 fi
