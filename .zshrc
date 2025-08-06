@@ -1,3 +1,6 @@
+# Source .profile
+[[ -f $HOME/.profile ]] && source $HOME/.profile
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -81,7 +84,8 @@ kubectl
 ssh-agent
 zsh-autosuggestions
 zsh-completions
-zsh-syntax-highlighting)
+zsh-syntax-highlighting
+uv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,7 +111,7 @@ export ARCHFLAGS="-arch x86_64"
 # Sources files in ~/.zsh/ folder
 for src_file in ~/.zsh/*;
 do 
-    source ~/.zsh/aliases;
+  source ~/.zsh/aliases;
 done
 
 # Example aliases
@@ -121,21 +125,16 @@ done
 test -n "$terminfo[kcuu1]" && bindkey "$terminfo[kcuu1]" up-line-or-history
 test -n "$terminfo[kcud1]" && bindkey "$terminfo[kcud1]" down-line-or-history
 
-# Autocomplete
-[[ ! -f /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
-
-# Pyenv - replacement with UV
-#export PYENV_ROOT="$HOME/.pyenv"
-#ommand -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
-# UV
-echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
-
 # bash-style completion in the Zsh shell
 autoload -U +X bashcompinit && bashcompinit
 
-# OpenTofu: Opensource version of Terraform
-if command -v /usr/bin/tofu >/dev/null 2>&1; then
-  complete -o nospace -C /usr/bin/tofu tofu
-fi
+# Autocomplete
+[[ ! -f /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
+[[ ! -f /usr/bin/tofu ]] || complete -o nospace -C /usr/bin/tofu tofu
+
+# UV
+# run scripts with "py main.py"
+function py() {
+  uv run $1
+}
+
