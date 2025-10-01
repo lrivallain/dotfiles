@@ -12,6 +12,7 @@ brew install jq
 brew install httpie
 brew install tmux
 brew install mtr
+brew install docker
 
 # Cask
 brew install --cask iterm2
@@ -47,3 +48,7 @@ then
 else
   uv self update
 fi
+
+# Terraform
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
