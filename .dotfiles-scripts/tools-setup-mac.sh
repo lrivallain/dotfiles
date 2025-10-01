@@ -20,6 +20,7 @@ brew install --cask visual-studio-code
 brew install --cask bitwarden
 brew install --cask whatsapp
 brew install --cask spotify
+brew install --cask font-fira-code-nerd-font
 
 # Unused yet
 # brew install only-switch

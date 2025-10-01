@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd $HOME
+mkdir -p .ssh
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
 shopt -s expand_aliases
