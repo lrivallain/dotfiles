@@ -16,8 +16,6 @@ else
   dotfiles checkout -f --quiet
 fi
 
-bash $HOME/.dotfiles-scripts/zsh-setup.sh
-
 OS_TYPE="$(uname)"
 if [[ "$OS_TYPE" == "Linux" ]]; then
     echo "Running on Linux"
@@ -34,3 +32,5 @@ else
     echo "Unknown OS: $OS_TYPE"
     exit 1
 fi
+
+bash $HOME/.dotfiles-scripts/zsh-setup.sh

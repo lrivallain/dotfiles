@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Ensure to have zsh installed
-sudo apt update -qqy
-sudo apt install zsh -qqy
-
-
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
-
 
 if [[ -d $ZSH_CUSTOM/../.git ]]
 then
@@ -30,14 +24,14 @@ for plugin in ${omz_plugins[@]}; do
 done
 
 echo "Powerlevel10k theme..."
-if [[ -d ${ZSH_CUSTOM}/themes/powerlevel10k ]] 
+if [[ -d ${ZSH_CUSTOM}/themes/powerlevel10k ]]
 then
   git -C ${ZSH_CUSTOM}/themes/powerlevel10k pull --quiet
 else
   git clone --quiet https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 fi
 
-# If custom zshrc file was moved by ohmyzsh, replace it 
+# If custom zshrc file was moved by ohmyzsh, replace it
 if [[ -f ${HOME}/.zshrc.pre-oh-my-zsh ]]
 then
   mv ${HOME}/.zshrc.pre-oh-my-zsh ${HOME}/.zshrc
