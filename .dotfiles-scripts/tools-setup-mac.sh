@@ -13,6 +13,7 @@ brew install httpie
 brew install tmux
 brew install mtr
 brew install docker
+brew install signal
 
 # Cask
 brew install --cask iterm2
