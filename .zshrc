@@ -137,4 +137,7 @@ autoload -U +X bashcompinit && bashcompinit
 function py() {
   uv run $1
 }
-. "$HOME/.local/bin/env"
+#. "$HOME/.local/bin/env"
+
+# Homebrew path
+export PATH=$PATH:/opt/homebrew/sbin

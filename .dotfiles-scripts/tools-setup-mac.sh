@@ -11,7 +11,13 @@ brew install ack
 brew install jq
 brew install httpie
 brew install tmux
+
 brew install mtr
+# https://article.masdzub.com/how-to-use-mtr-without-sudo-macos.aspx/
+sudo chown root /opt/homebrew/sbin//mtr-packet
+sudo chmod 4755 /opt/homebrew/sbin//mtr-packet
+
+
 brew install docker
 brew install signal
 
