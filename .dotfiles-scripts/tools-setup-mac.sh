@@ -11,15 +11,14 @@ brew install ack
 brew install jq
 brew install httpie
 brew install tmux
+# brew install wireguard-tools # Use the Mac App Store https://apps.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12
+brew install docker
+brew install signal
 
 brew install mtr
 # https://article.masdzub.com/how-to-use-mtr-without-sudo-macos.aspx/
 sudo chown root /opt/homebrew/sbin//mtr-packet
 sudo chmod 4755 /opt/homebrew/sbin//mtr-packet
-
-
-brew install docker
-brew install signal
 
 # Cask
 brew install --cask iterm2
@@ -29,6 +28,7 @@ brew install --cask bitwarden
 brew install --cask whatsapp
 brew install --cask spotify
 brew install --cask font-fira-code-nerd-font
+# brew install --cask hiddenbar # Untrusted, use the Mac App Store instead
 
 # Unused yet
 # brew install only-switch
