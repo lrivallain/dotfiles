@@ -139,5 +139,7 @@ function py() {
 }
 #. "$HOME/.local/bin/env"
 
-# Homebrew path
-export PATH=$PATH:/opt/homebrew/sbin
+if [[ "$OS_TYPE" == "Darwin" ]]; then
+  # Homebrew path
+  export PATH=$PATH:/opt/homebrew/sbin
+fi
