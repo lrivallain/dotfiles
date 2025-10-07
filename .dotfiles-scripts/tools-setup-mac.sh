@@ -14,6 +14,7 @@ brew install tmux
 # brew install wireguard-tools # Use the Mac App Store https://apps.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12
 brew install docker
 brew install signal
+brew install drawio
 
 brew install mtr
 # https://article.masdzub.com/how-to-use-mtr-without-sudo-macos.aspx/
@@ -28,6 +29,8 @@ brew install --cask bitwarden
 brew install --cask whatsapp
 brew install --cask spotify
 brew install --cask font-fira-code-nerd-font
+brew install --cask autodesk-fusion
+brew install --cask prusaslicer
 # brew install --cask hiddenbar # Untrusted, use the Mac App Store instead
 
 # Unused yet
