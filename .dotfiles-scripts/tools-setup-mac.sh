@@ -31,6 +31,7 @@ brew install --cask spotify
 brew install --cask font-fira-code-nerd-font
 brew install --cask autodesk-fusion
 brew install --cask prusaslicer
+brew install --cask royal-tsx
 # brew install --cask hiddenbar # Untrusted, use the Mac App Store instead
 
 # Unused yet
